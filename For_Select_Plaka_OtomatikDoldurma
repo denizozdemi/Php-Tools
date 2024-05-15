@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<select>
+	<?php
+	for ($a=1; $a<=81 ; $a++) {?>
+		<option><?php echo $a ?></option>
+	<?php }
+	?>
+	
+</select>
+
+</body>
+</html>
