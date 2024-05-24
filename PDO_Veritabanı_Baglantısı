@@ -1,0 +1,10 @@
+<?php
+try {
+	$db=new PDO("mysql:host=localhost;dbname=veri tabanı ismi;charset=utf8",'veri tabanı kulanıcı adı','veri tabanı şifresi');
+	echo "Veritabanına baglantısı başarılı";
+} catch (PDOExpception $e) {
+	echo $e->getMessage();
+	
+}
+
+?>
