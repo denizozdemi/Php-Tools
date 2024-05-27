@@ -1,0 +1,5 @@
+$bilgilerimsor=$db->prepare("SELECT * from bilgilerim");            //Select ile tüm tabloları getirdik
+$bilgilerimsor->execute();                                          //execute ile derleyip bilgilerimsorun içine aktardık
+while($bilgilerimcek=$bilgilerimsor->fetch(PDO::FETCH_ASSOC)) {     //bilgilerim veritabanında oluşturdugum tablonun ismi
+    echo $bilgilerimcek['bidilerim_ad']; echo "<br>";               //db de veritabanı baglantısında verdigim isim ikisini size göre değiştiriniz
+  }
