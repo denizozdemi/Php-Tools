@@ -1,0 +1,2 @@
+//Veritabanı ile işlem yapmak istediğinde veritabanı php dosyasını diger php dosyasına baglantı kurman lazım o da şu şekil yapılır: aşagıda ki satırı kopyalayıp veritabanı ile işlem yapmak istediğin php dosyasının en üst satırına yapıştırınız
+<?php require_once 'Veri tabanı baglantısında oluşturdugun php dosya adını yazınız'; ?>
