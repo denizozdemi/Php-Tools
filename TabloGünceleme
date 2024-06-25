@@ -19,4 +19,5 @@ if (isset($_POST['genelayarkaydet'])) {
 		echo "güncelleme başarısız";
 	}
 }
+
 ?>
