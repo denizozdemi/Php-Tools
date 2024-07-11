@@ -1,0 +1,16 @@
+//Bir form yeri olsun ve günceleme yapılabilir şekilde fakat kullanıcı değişiklik yapmak ister ise veri tabanında ki verileri göremek isteyebilir bunun için formun içinde veri tabanı bilgileri otomatik dolu şekilde olsun onun içinden değişklik yapsın.
+// Bu sayede kullanıcı değiştireceği bilgiyi görebilecek
+//ilk header php dosyasından veri tabınıdaki bilgileri çekelim 
+<?php 
+include '../netting/baglan1.php';
+$bilgilerimsor=$db->prepare("SELECT * from ayar1 where ayar_id=:id");
+$bilgilerimsor->execute(array(
+    'id'=>0
+  ));
+  $ayarcek=$bilgilerimsor->FETCH(PDO::FETCH_ASSOC);
+?>
+//şimdi artık veri tabanında id si 0 olan veri bilgilerini içeriye almış olduk sırada bunu form un içinde gözüktürmek kaldı onu da genel-ayar php dosyasından yapacagız 
+//daha önceden oluşturduğumuz form içerisinde ki input  da value ile içerisine yazdırmak kaldı
+
+<input type="text" id="first-name" name="ayar_title" value="<?php echo $ayarcek['ayar_title']; ?>" required="required" class="form-control col-md-7 col-xs-12">
+// input içerisine value içerisine php tagı açtım en son echo ile istediğim tabloda ki sütünü içerisine yükledim
