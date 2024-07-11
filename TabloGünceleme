@@ -1,3 +1,5 @@
+//ilk güncelle yaptırdık ve bunu verdiğimiz adların içerisine aatık daha sonra güncellenleri kullanıcı post ile gösterdik en sonda ise buttona bastıktan sonra hangi yere aktarsın onun linkini verdik ve duruma göre linkte durum=ok ya da durum=no yazacak
+//Eğer istersen link yazan duruma göre kullanıcı ekranında güncellendi ya da güncellenmedi yazmasını istersen en alt da yapıyorum
 <?php
 include 'baglan.php';
 if (isset($_POST['genelayarkaydet'])) {
@@ -14,10 +16,21 @@ if (isset($_POST['genelayarkaydet'])) {
 		'ayar_author' => $_POST['ayar_author']
 	));
 	if ($update) {
-		echo "güncellendi";
-	} else{
-		echo "güncelleme başarısız";
+		header("Location:../production/genel-ayar1.php?durum=ok");
+	} else {
+		header("Location:../production/genel-ayar1.php?durum=no");
 	}
 }
 
 ?>
+// Güncellendi ya da güncellenmedi ekrana yansıtacagız genel-ayar1.php ye giriyoruz orda ben genel ayarların yanına yazmak istiyorum
+<?php 
+                    if ($_GET['durum']=="ok") { ?>
+                      <b style="color:green;"> Güncellendi </b>
+                      <?php
+                    } elseif($_GET['durum']=="no") { ?>
+                      <b style="color:red;"> Güncellenmedi </b>
+                      <?php
+                    }
+                    ?>
+//der isek ekranda yazar artık hemen genel ayarın yanına smal arasına yzdım
